@@ -18,7 +18,7 @@ Generated from https://github.com/Freebielife/TON-Observatory-Template.
 
 Run python3 -m scripts.refresh_observatory; python3 build.py; python3 verify.py.
 Publish index.html in TON Sites only after independent on-chain verification.
-The initial snapshot is EMPTY: no market data is claimed.
+Initial on-chain snapshot collected; individual freshness and history coverage are recorded in data/snapshot.json.
 Only native TON swap pairs supported. Locks, staking and custom project NFT badges are configured through project.json and verified against TonAPI.
 Configure your GitHub workflow scheduler before launch.
 
@@ -35,3 +35,12 @@ Cloudflare dispatch registration and GitHub repository access remain separate de
 Логотип: https://major.bot/favicon.png — резервный официальный источник; SVG из метаданных возвращал HTTP 404.
 Нативный GitHub cron :10/:40 UTC служит резервом; плановые запуски требуют отдельной проверки.
 TON Storage / RT пока не опубликован.
+
+## Покрытие операций
+
+Лента собирает подтверждённые прямые обмены MAJOR/TON на STON.fi v2 и DeDust.
+Основной график использует STON.fi v2 (проверенная ликвидность выше DeDust); цены разных пулов не смешиваются.
+Другие пары отображаются в разделе пулов, но не включаются в заявленное покрытие ленты.
+История достраивается постепенно; неполные периоды отмечаются.
+Исправление распознавания GeckoTerminal stonfi-v2 сохранено в общей основе: 65780137fa12eda7500f48d29c5b261411305274.
+Общий планировщик: 30 минут, фаза :10/:40 UTC; регистрация в исходниках добавлена, реальный плановый запуск требует подтверждения.

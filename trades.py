@@ -5,8 +5,8 @@ from urllib.parse import urlencode
 
 from assets import MASTER_RAW, fetch, raw_address, token_amount, native_amount
 
-PRIMARY = 'EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp'
-POOLS = {'EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp': ('dedust', 'DeDust')}
+PRIMARY = 'EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk'
+POOLS = {'EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk': ('stonfi', 'STON.fi'), 'EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp': ('dedust', 'DeDust')}
 TX_HASH = re.compile(r"[a-f0-9]{64}")
 
 

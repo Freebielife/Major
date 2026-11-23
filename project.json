@@ -10,13 +10,19 @@
   },
   "pools": [
     {
+      "address": "EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk",
+      "dex": "stonfi",
+      "quote": "TON",
+      "evidence": "https://tonapi.io/v2/accounts/EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk/events?limit=100"
+    },
+    {
       "address": "EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp",
       "dex": "dedust",
       "quote": "TON",
       "evidence": "https://tonapi.io/v2/accounts/EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp/events?limit=100"
     }
   ],
-  "primary_pool": "EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp",
+  "primary_pool": "EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk",
   "links": {
     "website": "https://major.bot/",
     "telegram": "https://t.me/majors",
@@ -33,7 +39,8 @@
       "https://tonapi.io/v2/jettons/EQCuPm01HldiduQ55xaBF_1kaW_WAUy5DHey8suqzU_MAJOR",
       "https://api.geckoterminal.com/api/v2/networks/ton/tokens/EQCuPm01HldiduQ55xaBF_1kaW_WAUy5DHey8suqzU_MAJOR/pools?page=1",
       "https://api.geckoterminal.com/api/v2/networks/ton/tokens/EQCuPm01HldiduQ55xaBF_1kaW_WAUy5DHey8suqzU_MAJOR/pools?page=2",
-      "https://api.geckoterminal.com/api/v2/networks/ton/tokens/EQCuPm01HldiduQ55xaBF_1kaW_WAUy5DHey8suqzU_MAJOR/pools?page=3"
+      "https://api.geckoterminal.com/api/v2/networks/ton/tokens/EQCuPm01HldiduQ55xaBF_1kaW_WAUy5DHey8suqzU_MAJOR/pools?page=3",
+      "https://tonapi.io/v2/accounts/EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk/events?limit=100"
     ],
     "primaryPoolPolicy": "largest indexed USD liquidity among swap-verified supported TON pools"
   },
@@ -72,7 +79,7 @@
   },
   "methodology": {
     "valuation": "last observed swap in primary_pool times CURRENT total supply; not circulating market cap",
-    "primary_pool": "EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp",
+    "primary_pool": "EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk",
     "sellers": "sum of successful supported native TON swap sales; service roles excluded",
     "holders": "balances excluding known services and identified contracts; unclassified accounts may remain until verified",
     "burns": "accepted burn notifications and zero-address transfers shown as distinct evidence",

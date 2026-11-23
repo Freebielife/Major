@@ -15,7 +15,7 @@
       return rate&&time-rate[0]<=2*86400?rate[1]:null;
     }
     const rows=(snapshot.trades?.rows||[]).filter(r=>
-      r.pool==="EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp"&&Number.isFinite(r.time)&&r.time<=end&&
+      r.pool==="EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk"&&Number.isFinite(r.time)&&r.time<=end&&
       Number.isFinite(Number(r.tokenAmount))&&Number(r.tokenAmount)>0&&Number.isFinite(Number(r.ton))&&Number(r.ton)>0)
       .slice().sort((a,b)=>a.time-b.time||(a.lt||"").localeCompare(b.lt||"",undefined,{numeric:true})||a.tx.localeCompare(b.tx));
     function value(row,time=row.time){

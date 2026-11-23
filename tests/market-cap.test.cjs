@@ -1,7 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {marketCapSeries}=require('../web/market-cap.js');
-const row=(time,project,ton=1)=>({pool:"EQBl48rgDqrk4b23UB3WW1LmEv1I6bWpmcl_5weaNSbEg6kp",time,tokenAmount:String(project),ton:String(ton),tx:String(time),kind:'buy'});
+const row=(time,project,ton=1)=>({pool:"EQCItmol3T2MxI476jbvQa01EDqmBRIZ3xP_FtGdQewuWVUk",time,tokenAmount:String(project),ton:String(ton),tx:String(time),kind:'buy'});
 const snapshot=rows=>({holders:{totalSupply:'1000000'},trades:{asOf:200,since:1,rows}});
 test('fewer tokens per TON raises valuation; baseline uses the last earlier trade',()=>{
  const d=marketCapSeries(snapshot([row(190,50),row(90,100)]),100);
