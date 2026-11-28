@@ -43,11 +43,11 @@ def publish(root: Path, branch: str = "main", retries: int = 3) -> None:
         print(f"Publishing snapshot (attempt {attempt}/{retries})", flush=True)
         command(root, "git", "fetch", "origin", "+refs/heads/main:refs/remotes/origin/main")
         before = command(root, "git", "rev-parse", "HEAD").stdout.strip()
-        rebase = command(root, "git", "rebase", "refs/remotes/origin/main", allow_failure=True)
+        rebase = command(root, "git", "rebase", "--autostash", "refs/remotes/origin/main", allow_failure=True)
         if rebase.returncode:
             # A conflict may mean a second writer changed snapshot.json. Never
             # overwrite someone else's work or silently accept stale data.
-            command(root, "git", "rebase", "--abort")
+            command(root, "git", "rebase", "--abort", allow_failure=True)
             raise PublishError("Concurrent conflicting changes in main; not overwriting. "
                                "The next scheduled refresh will collect fresh data.\n" +
                                rebase.stdout[-1600:])
